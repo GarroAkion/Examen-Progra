@@ -1,0 +1,105 @@
+# Ejercio 1
+
+class aste(object):
+    def __init__(self):
+        pass
+    def matriz(self,tamaño_matriz):
+        if isinstance (tamaño_matriz,int):
+            return self.matriz_aux(tamaño_matriz,0,0,0,[])
+        else: return "Error"
+
+    def matriz_aux(self,tamaño_matriz,indiceF,indiceC,contador,resultado):
+        if contador == tamaño_matriz:
+            return resultado
+        elif indiceC==len(tamaño_matriz)-1:
+            return self.matriz_aux(tamaño_matriz,indiceF+1,0,contador+1,resultado)
+        elif indiceF==contador:
+            return self.matriz_aux(tamaño_matriz,indiceF,indiceC+1,contador,resultado+[tamaño_matriz-contador])
+        else:
+            return self.matriz_aux((tamaño_matriz)-1,indiceF,indiceC,contador+1,resulto+[(tamaño_matriz-contador)+*])
+
+        
+#Ejercicio 2    
+
+class factorial(object):
+    def__init__(self):
+        pass
+    def permutaciones(self,n,x):
+        if isinstance n>=x:
+            return self.permut_aux(n,x,1)//(n-x)!
+        else:
+            return "Ingrese los datos de forma correcta"
+    def permut_aux(self,n,x,resultado):
+        if n==1:
+            return resultado
+        else:
+            return self.permut_aux(n-1,x,resultado+(resultado*n))
+
+
+
+#Ejercicio 3
+
+class cuad_magico(object):
+    def __init__(self):
+        pass
+    def es_magico(self,matriz):
+        if isinstance(matriz,list):
+            return self.magico_aux(sum_fil,sum_anti,sum_colum,sum_diagonal)
+        else:
+            return "No es una matriz"
+    def magico_aux(self,sum_fil,sum_anti,sum_colum,sum_diagonal):
+        if sum_fil==sum_anti and sum_anti==sum_colum and sum_colum==sum_diagonal:
+            return True
+        else:
+            return False
+    def sum_fil(self,matriz,indice,resultado):
+        if indice==len(lista)-1:
+            return resultado
+        else:
+            return self.sum_fil(matriz,indice+1,resultado+(matriz[indice][indice]))
+        
+    def sum_anti(self,matriz,indiceF,indiceC,resultado)
+    if indiceF==len(lista):
+        return resultado
+    elif indiceC==len(matriz)-1:
+        return self.sum_anti(matriz,indiceF+1,indiceC,resultado + matriz[indiceF][indiceC])
+    else:
+        return self.sum_anti(matriz, indiceF+1,indiceC+1,resultado)
+
+    def sum_colum(self,matriz,indice,resultado):
+        if indice == len(lista):
+            return resultado
+        else:
+            return self_colum(matriz,indiceC+1,resultado+matriz[indice][indice])
+
+    def sum_diagonal(matriz,indice,resultado):
+        if indice==len(matriz)-1:
+            return resultado
+        else: return self.sum_diagonal(matriz,indice+1,resultado+matriz[indice][indice])
+
+#Ejercicio 4
+class gf_barras(object):
+    def __init__(self):
+        pass
+    def grafico(self,lista):
+        if isinstance(lista,list):
+            return self.graf_aux(lista,0,0,0,mayor),self.mayor(lista,0,0,0)
+        else:
+            return "Error"
+    def mayor(self,lista,indice,resultado):
+        if lista==[]:
+            return resultado
+        elif lista[indice]>lista[indice+1]:
+            return self.mayor(lista,indice,resultado+lista[indice])
+        else:
+            return self.mayor(lista[1:],indice,resultado+lista[indice+1])
+
+    def graf_aux(self,lista,cant_as,indice,resultado,mayor):
+        if lista==[]:
+            return resultado
+        elif lista[indice]-mayor==0:
+            return self.graf_aux(lista,cant_as+mayor,indice+1,resultado+cant_as(*),mayor)
+        else:
+            return self.graf_aux(lista,cant_as+(mayor-lista[indice]),indice+1,resultado+cant_as(*),mayor)
+
+
